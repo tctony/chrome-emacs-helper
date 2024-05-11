@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Emacs Helper",
   "version": "0.1",
-  "permissions": ["contextMenus", "activeTab"],
+  "permissions": ["contextMenus"],
   "background": {
     "service_worker": "background.js"
   },
