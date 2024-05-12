@@ -1,8 +1,8 @@
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
     id: "copyAsOrgLink",
-    title: "Copy as Org Link",
     contexts: ["link"],
+    title: "Copy as Org Link"
   });
 });
 
