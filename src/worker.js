@@ -26,8 +26,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const orgLink = title ? `[[${link}][${title}]]` : `[[${link}]]`;
     chrome.tabs.sendMessage(tab.id, { action: MSG_WRITE_TEXT, data: orgLink, });
   } else if (info.menuItemId === MENU_ASK_COPILOT) {
-    const text = info.selectionText;
-    chrome.tabs.sendMessage(tab.id, { action: MENU_ASK_COPILOT, data: { text }, });
+    chrome.tabs.sendMessage(tab.id, { action: MENU_ASK_COPILOT, });
   }
 });
 

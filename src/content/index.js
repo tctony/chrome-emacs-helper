@@ -6,7 +6,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action == MSG_WRITE_TEXT) {
     write_text_to_clipboard(request.data);
   } else if (request.action == MSG_ASK_COPILOT) {
-    ask_copilot(request.data);
+    ask_copilot();
   }
 });
 
@@ -21,10 +21,10 @@ function write_text_to_clipboard(text) {
   document.body.removeChild(textarea);
 }
 
-function ask_copilot(params) {
-  console.log(`ask copilot with: ${JSON.stringify(params)}`);
-
-  const url = build_org_protocol_url("copilot", params);
+function ask_copilot() {
+  const text = window.getSelection().toString();
+  console.log(`ask copilot with: ${text}`);
+  const url = build_org_protocol_url("copilot", { text });
   console.log(`opening url ${url}`);
   open_url_in_background(url);
 }
