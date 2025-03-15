@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Emacs Helper",
+  "version": "0.1",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/content-script-reloader-Baf2h_lT.js",
+        "content/import-index.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "chunks/*-*.js",
+        "content/index.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "description": "DEVELOPMENT build with simple auto-reloader\n[2025-03-15 17:46:49] waiting for changes..."
+}

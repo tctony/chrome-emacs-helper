@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^28.0.3",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"rollup": "^4.35.0",
+		"rollup-plugin-chrome-extension": "^3.6.12"
+	}
+}
